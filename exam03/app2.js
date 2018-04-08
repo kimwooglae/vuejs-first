@@ -1,11 +1,11 @@
 Vue.component('sibling-component', {
   props: ['propsdata'],
-  template: '<p>sibling : {{ propdata }}</p>'
+  template: '<p>sibling : {{ propsdata }}</p>'
 });
 
 Vue.component('child-component', {
   props: ['propsdata'],
-  template: '<p>child : {{ propdata }}</p>'
+  template: '<p>child : {{ propsdata }}</p>'
 });
 
 
