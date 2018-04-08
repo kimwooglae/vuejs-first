@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Vue Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      event from child : {{ message }} <br/>
+      <my-local-component1></my-local-component1>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+      var eventBus = new Vue();
+      var cmp1 = {
+        template: '<div><p> event to parent : <button v-on:click="showLog">showLog</button> </p></div>',
+        methods: {
+          showLog: function() {
+            eventBus.$emit('sendEvent', 'data from child');
+          }
+        }
+      }
+      new Vue({
+        el: '#app',
+        data: {message: 'initialized'},
+        components: {
+          'my-local-component1' : cmp1
+        },
+        created: function() {
+          eventBus.$on('sendEvent', function(retVal) {
+            console.log(this.message);  // View Instance에 접근하는 방법을 모르겠음.
+            console.log('recevied an event : ' + retVal);
+            this.message = "recevied from child! : " + retVal;
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
