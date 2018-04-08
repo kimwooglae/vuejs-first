@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Vue Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      <button>component 등록</button>
+      <my-local-component1></my-local-component1>
+      <my-local-component2></my-local-component2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script>
+      var cmp1 = {
+        template: '<div> first local component : {{ cmp1Data }} </div>',
+        data : function() {
+          return {
+            cmp1Data: 100
+          }
+        }
+      }
+      var cmp2 = {
+        template: '<div> second local component : {{ cmp2Data }} </div>',
+        data : function() {
+          return {
+            cmp2Data: cmp1.data.com1Data
+          }
+        }
+      }
+      new Vue({
+        el: '#app',
+        components: {
+          'my-local-component1' : cmp1,
+          'my-local-component2' : cmp2
+        }
+      });
+    </script>
+  </body>
+</html>
