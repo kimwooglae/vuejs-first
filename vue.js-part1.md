@@ -14,7 +14,7 @@ Vue (pronounced /vjuː/, like view) is a **progressive framework** for building 
 
 --------
 
-MVVC
+MVVM
 ====
 
 Backend 로직과 Client 의 마크업 & 데이터 표현단을 분리하기 위한 구조로 전통적인 MVC 패턴의 방식에서 기인하였다. 
@@ -25,7 +25,7 @@ Backend 로직과 Client 의 마크업 & 데이터 표현단을 분리하기 위
 
 --------
 
-MVVC in Vue
+MVVM in Vue
 ====
 
 
@@ -404,7 +404,7 @@ v-on Shorthand
 
 | 태그                   | 설명                                                         |
 |-----------------------|-------------------------------------------------------------|
-|<router-link to="URL값"| 페이지 이동 태그. 화면에서는 <a>로 표시되며 클릭하면 to에 지정한 URL로 이동 |
+|<router-link to="URL값"| 페이지 이동 태그. 화면에서는 `<a>`로 표시되며 클릭하면 to에 지정한 URL로 이동 |
 |<router-view>          | 페이지 표시 태그. 변경되는 URL에 따라 해당 컴포넌트를 뿌려주는 영역        |
 
 ------
@@ -480,22 +480,8 @@ name 속성을 지정하여 여러개의 `<router-view>`를 한번에 표시. �
 
 ![inline](https://joshua1988.github.io/images/posts/web/vuejs/namedview-nestedroutes.png)
 
-------
 
-뷰 라우터 (history)
-========
+-----
 
-뷰 라우터의 기본 URL 형식은 해시값을 사용한다.
-해시를 제거하고 싶으면 history mode를 사용하면 된다.
-
-```javascript
-var router = new VueRouter({
-  mode: 'history',
-  routes
-});
-// file:///vuejs-first/exam04/index1.html#/
-// file:///vuejs-first/exam04/index1.html#/main
-// file:///vuejs-first/exam04/index1.html#/login
-```
-
-
+감사합니다
+======
