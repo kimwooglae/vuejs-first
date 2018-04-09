@@ -454,7 +454,31 @@ v-on Shorthand
 
 ------
 
-------
+네임드 뷰
+=======
+name 속성을 지정하여 여러개의 `<router-view>`를 한번에 표시. 기본 이름은 `default`를 사용.
+
+```html
+<div id="app">
+  <router-view name="header"></router-view>
+  <router-view></router-view>
+  <router-view name="footer"></router-view>
+</div>
+<script>
+  var Header = {template: '<div>Header Component</div>'};
+  var Footer = {template: '<div>Footer Component</div>'};
+  var Body = {template: '<div>Body Component</div>'};
+  var routes = [{path: '/',
+    components: {default:Body, header:Header, footer:Footer}}];
+  var router = new VueRouter({routes});
+```
+
+-----
+
+네스티드 라우터 vs 네임드 뷰
+========
+
+![inline](https://joshua1988.github.io/images/posts/web/vuejs/namedview-nestedroutes.png)
 
 ------
 
@@ -472,7 +496,6 @@ var router = new VueRouter({
 // file:///vuejs-first/exam04/index1.html#/
 // file:///vuejs-first/exam04/index1.html#/main
 // file:///vuejs-first/exam04/index1.html#/login
-
 ```
 
 
